@@ -1,6 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Trecis Consulting</title>
-<link rel="icon" type="image/png" href="logo.png">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +48,7 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacin
 .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
 .nav-in { max-width: 1160px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
-.brand img { display: block; height: 34px; width: auto; }
+.brand svg { display: block; }
 .links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
 .links a { text-decoration: none; color: var(--muted); }
 .links a:hover { color: var(--ink); }
@@ -96,6 +95,24 @@ section { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--li
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 24px 64px; margin-bottom: clamp(32px, 5vw, 64px); align-items: end; }
 .sec-head h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); }
 .sec-head p { color: var(--muted); max-width: 36em; }
+
+/* Divisions */
+.divs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.5vw, 28px); margin-bottom: clamp(32px, 5vw, 56px); }
+.div-card { border-radius: clamp(20px, 3vw, 28px); padding: clamp(24px, 4vw, 44px); border: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.div-card.hiring { background: var(--accent-soft); border-color: transparent; }
+.div-card.psy { background: var(--surface); }
+.div-card h3 { font-size: clamp(2rem, 4vw, 3.1rem); letter-spacing: -0.035em; }
+.div-card > p { color: var(--muted); max-width: 30em; }
+.div-card ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 0; }
+.div-card li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid rgba(14, 27, 25, 0.1); font-weight: 500; font-size: 16px; line-height: 1.4; }
+.div-card li::before { content: ""; flex: none; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.7 2.5L12 5.5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px 12px no-repeat; }
+.svc-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-soft); color: var(--ink); padding: 5px 10px; border-radius: 999px; }
+.traits { display: grid; gap: 16px; }
+.trait { display: grid; grid-template-columns: minmax(0, 10em) minmax(0, 1fr) 3ch; gap: 12px; align-items: center; font-size: 14px; }
+.trait .track { height: 8px; border-radius: 4px; background: var(--idle-soft); overflow: hidden; }
+.trait .track i { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+.trait .v { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
 
 /* Services */
 .svc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 80px); padding-block: clamp(28px, 4vw, 48px); border-top: 1px solid var(--line); align-items: center; }
@@ -185,6 +202,7 @@ footer a:hover { color: var(--ink); }
   .svc.flip .viz { order: 2; }
 }
 @media (max-width: 960px) { .links, .nav-right { gap: 18px; } }
+@media (max-width: 860px) { .divs { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 720px) {
   body { font-size: 16px; }
   .nav-right { gap: 10px; }
@@ -209,6 +227,8 @@ footer a:hover { color: var(--ink); }
   .hero-foot { align-items: flex-start; }
 }
 @media (max-width: 480px) {
+  .trait { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .trait .track { grid-column: 1 / -1; order: 3; }
   .cta, .mail { width: 100%; }
   .cta .btn, .mail .btn { flex: 1 1 100%; justify-content: space-between; }
   .mail code { width: 100%; }
@@ -228,7 +248,11 @@ footer a:hover { color: var(--ink); }
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="Trecis Consulting home">
-      <img src="logo.png" alt="" width="38" height="34" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x="2" y="4" width="14" height="5" rx="2.5" fill="var(--ink)"/>
+        <rect x="7" y="11.5" width="14" height="5" rx="2.5" fill="var(--accent)"/>
+        <rect x="12" y="19" width="14" height="5" rx="2.5" fill="var(--ink)"/>
+      </svg>
       Trecis
     </a>
     <div class="nav-right">
@@ -247,7 +271,7 @@ footer a:hover { color: var(--ink); }
 <main id="top" class="wrap">
   <div class="hero">
     <div class="hero-panel">
-      <span class="eyebrow"><i></i>HR consulting &middot; Hyderabad, India</span>
+      <span class="eyebrow"><i></i>Hiring &amp; psychometrics &middot; Hyderabad, India</span>
       <div class="trio">
         <h1>
           <span class="word w1">Enrich.</span>
@@ -259,7 +283,7 @@ footer a:hover { color: var(--ink); }
         <p class="desc d3">Verified hires, brought into your organization across borders.</p>
       </div>
       <div class="hero-foot">
-        <p class="lede">Precision recruitment support and data-driven workforce insights. We close the gap between talent and performance.</p>
+        <p class="lede">Two divisions, one purpose: hiring and psychometrics, backed by rigorous verification and data-driven workforce insights. We close the gap between talent and performance.</p>
         <div class="cta">
           <a class="btn" href="#services">Explore services</a>
           <a class="btn ghost" href="#contact">Talk to us</a>
@@ -270,13 +294,36 @@ footer a:hover { color: var(--ink); }
 
   <section id="services">
     <div class="sec-head">
-      <h2>Three services, one workforce picture.</h2>
-      <p>Strategic HR for organizations that treat people as their biggest asset. We pair a careful, hands-on approach to hiring with rigorous verification and analytics you can act on.</p>
+      <h2>Two divisions, one workforce picture.</h2>
+      <p>Our Hiring and Psychometrics divisions work together: careful, hands-on recruitment, objective assessment of how people think and work, and verification and analytics you can act on.</p>
+    </div>
+
+    <div class="divs">
+      <article class="div-card hiring">
+        <span class="label">Division</span>
+        <h3>Hiring</h3>
+        <p>Recruitment built around the role and the team, with every hire verified before they start.</p>
+        <ul>
+          <li>Precision recruitment support</li>
+          <li>Candidate verification with TrecisVerify</li>
+          <li>Cross-border talent integration</li>
+        </ul>
+      </article>
+      <article class="div-card psy">
+        <span class="label">Division</span>
+        <h3>Psychometrics</h3>
+        <p>Objective, structured assessment of how people think, work and fit, to support better hiring and development decisions.</p>
+        <ul>
+          <li>Aptitude and cognitive assessments</li>
+          <li>Personality and behavioural profiling</li>
+          <li>Role-fit reports and development insights</li>
+        </ul>
+      </article>
     </div>
 
     <div class="svc">
       <div>
-        <span class="label">Recruitment Support</span>
+        <div class="svc-meta"><span class="tag">Hiring</span><span class="label">Recruitment Support</span></div>
         <h3>Precision recruitment</h3>
         <p>End-to-end talent acquisition built around what your organization needs. We search carefully for the right fit for every role and bridge the gap between your requirements and seasoned professionals.</p>
       </div>
@@ -293,7 +340,7 @@ footer a:hover { color: var(--ink); }
 
     <div class="svc flip">
       <div>
-        <span class="label">TrecisVerify</span>
+        <div class="svc-meta"><span class="tag">Hiring</span><span class="label">TrecisVerify</span></div>
         <h3>Verification you can rely on</h3>
         <p>Rigorous workforce verification protocols that give you transparency and data integrity, and lower performance and compliance risk when you bring on talent from anywhere in the world.</p>
       </div>
@@ -311,7 +358,24 @@ footer a:hover { color: var(--ink); }
 
     <div class="svc">
       <div>
-        <span class="label">TrecisInsight</span>
+        <div class="svc-meta"><span class="tag">Psychometrics</span><span class="label">Assessments</span></div>
+        <h3>Know how people think and work</h3>
+        <p>Structured psychometric assessments measure aptitude, personality and behaviour against the demands of the role. You get a clear, comparable picture of each person, for selection and for development.</p>
+      </div>
+      <div class="viz">
+        <span class="label">Sample role-fit profile</span>
+        <div class="traits" role="img" aria-label="Sample profile: reasoning 82, conscientiousness 74, collaboration 68, adaptability 79">
+          <div class="trait"><span>Reasoning</span><div class="track"><i style="width: 82%"></i></div><span class="v">82</span></div>
+          <div class="trait"><span>Conscientiousness</span><div class="track"><i style="width: 74%"></i></div><span class="v">74</span></div>
+          <div class="trait"><span>Collaboration</span><div class="track"><i style="width: 68%"></i></div><span class="v">68</span></div>
+          <div class="trait"><span>Adaptability</span><div class="track"><i style="width: 79%"></i></div><span class="v">79</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div>
+        <div class="svc-meta"><span class="tag">Hiring &amp; Psychometrics</span><span class="label">TrecisInsight</span></div>
         <h3>Workforce insights that lead to decisions</h3>
         <p>Complex people data, turned into clear strategic roadmaps. TrecisInsight shows where your organization is growing, where it is losing people, and what to do about it.</p>
       </div>
@@ -331,7 +395,7 @@ footer a:hover { color: var(--ink); }
   <section id="why">
     <div class="sec-head">
       <h2>Why teams choose Trecis.</h2>
-      <p>Build smarter teams and make better-informed decisions with a partner that treats recruitment, verification and analytics as one practice.</p>
+      <p>Build smarter teams and make better-informed decisions with a partner that treats recruitment, psychometrics, verification and analytics as one practice.</p>
     </div>
     <div class="why">
       <div>
@@ -403,7 +467,7 @@ footer a:hover { color: var(--ink); }
     <div class="contact">
       <h2>Build your next team with us.</h2>
       <div class="details">
-        <p style="color: var(--muted)">Tell us what you are hiring for or what you want to learn about your workforce. We reply with a clear next step.</p>
+        <p style="color: var(--muted)">Tell us what you are hiring for, or what you want to assess and learn about your people. We reply with a clear next step.</p>
         <div class="mail">
           <code id="addr">ta@trecisconsulting.com</code>
           <button class="btn" type="button" id="copy">Copy email</button>
