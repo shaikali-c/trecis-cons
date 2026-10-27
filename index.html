@@ -1,0 +1,470 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Trecis Consulting</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: left-aligned editorial type over a quiet grid; service rows pair copy with a small sample visual; one bold moment in the hero. */
+:root {
+  --bg: #FFFFFF;
+  --surface: #F6F8F7;
+  --ink: #0E1B19;
+  --muted: #5B6865;
+  --line: #E1E6E3;
+  --accent: #36AC46;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E8F5EA;
+  --good: #12805C;
+  --good-soft: #DDF3EA;
+  --warn: #9A5B00;
+  --warn-soft: #FBEBCF;
+  --idle: #6B7873;
+  --idle-soft: #E5EAE7;
+  --font-display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.02em; line-height: 1.04; font-weight: 600; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1160px; margin-inline: auto; }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+.nav-in { max-width: 1160px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+.brand svg { display: block; }
+.links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
+.links a { text-decoration: none; color: var(--muted); }
+.links a:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 14px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 16px; line-height: 1; padding: 8px 8px 8px 24px; min-height: 46px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; font-family: var(--font-body); letter-spacing: 0.005em; transition: background 0.15s ease, transform 0.15s ease; }
+.btn::after { content: ""; display: block; flex: none; width: 30px; height: 30px; border-radius: 50%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%23FFFFFF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat, rgba(255, 255, 255, 0.22); transition: transform 0.15s ease; }
+.btn:hover { background: #2E9A3D; }
+.btn:hover::after { transform: translateX(2px); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 8px 8px 8px 24px; }
+.btn.ghost::after { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%2336AC46' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px 16px no-repeat, var(--accent-soft); }
+.btn.ghost:hover { background: #FFFFFF; border-color: var(--ink); }
+.nav .btn { font-size: 15px; min-height: 42px; padding: 6px 6px 6px 20px; color: var(--accent-ink); }
+.nav .btn::after { width: 28px; height: 28px; }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; padding: 0; position: relative; flex: none; }
+.menu-btn span { position: absolute; left: 13px; right: 13px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform 0.2s ease, top 0.2s ease; }
+.menu-btn span:nth-child(1) { top: 17px; }
+.menu-btn span:nth-child(2) { top: 25px; }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { top: 21px; transform: rotate(-45deg); }
+html, body { overflow-x: clip; }
+
+/* Hero: a soft green panel; the three words sit on a rail with nodes, like stages in a pipeline. */
+.hero { padding-block: clamp(20px, 3vw, 36px) clamp(40px, 6vw, 72px); }
+.hero-panel { background: var(--accent-soft); border-radius: clamp(20px, 3vw, 32px); padding: clamp(24px, 5vw, 64px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 7px 14px 7px 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+.eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: block; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(20px, 3vw, 48px); margin-top: clamp(36px, 7vw, 88px); }
+.trio h1 { display: contents; }
+.word { position: relative; display: block; padding-top: 28px; border-top: 2px solid rgba(14, 27, 25, 0.16); font-family: var(--font-display); font-weight: 700; font-size: min(4.8vw, 4.2rem); letter-spacing: -0.045em; line-height: 1; min-width: 0; }
+.word::before { content: ""; position: absolute; top: -9px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
+.word.w2::before { background: #FFFFFF; border: 2px solid var(--accent); }
+.word.w3::before { background: #FFFFFF; border: 2px solid var(--ink); }
+.desc { display: block; margin-top: 16px; color: var(--muted); font-size: 16px; line-height: 1.5; max-width: 17em; min-width: 0; }
+.w1 { grid-column: 1; grid-row: 1; } .d1 { grid-column: 1; grid-row: 2; }
+.w2 { grid-column: 2; grid-row: 1; } .d2 { grid-column: 2; grid-row: 2; }
+.w3 { grid-column: 3; grid-row: 1; } .d3 { grid-column: 3; grid-row: 2; }
+.hero-foot { margin-top: clamp(36px, 6vw, 72px); display: flex; flex-wrap: wrap; gap: 24px 48px; justify-content: space-between; align-items: flex-end; }
+.hero-foot .lede { max-width: 32em; font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--ink); line-height: 1.5; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+section[id], #top { scroll-margin-top: 76px; }
+/* Section scaffolding */
+section { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--line); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 24px 64px; margin-bottom: clamp(32px, 5vw, 64px); align-items: end; }
+.sec-head h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); }
+.sec-head p { color: var(--muted); max-width: 36em; }
+
+/* Services */
+.svc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 80px); padding-block: clamp(28px, 4vw, 48px); border-top: 1px solid var(--line); align-items: center; }
+.svc:last-child { border-bottom: 1px solid var(--line); }
+.svc h3 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin: 10px 0 16px; }
+.svc p { color: var(--muted); max-width: 30em; }
+.viz { background: #FFFFFF; border: 1px solid var(--line); border-radius: 16px; padding: 20px; min-width: 0; }
+.viz .label { display: block; margin-bottom: 16px; }
+
+.funnel { display: grid; gap: 8px; }
+.funnel div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); color: var(--ink); font-size: 14px; font-weight: 500; }
+.funnel div:nth-child(1) { width: 100%; }
+.funnel div:nth-child(2) { width: 82%; }
+.funnel div:nth-child(3) { width: 62%; }
+.funnel div:nth-child(4) { width: 44%; background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.funnel span { font-family: var(--font-mono); font-size: 13px; }
+
+.checks { list-style: none; margin: 0; padding: 0; display: grid; }
+.checks li { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.checks li:last-child { border-bottom: 0; }
+.checks .tick { display: inline-flex; align-items: center; gap: 8px; color: var(--good); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+.checks .tick.wait { color: var(--warn); }
+
+.bars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: end; height: 190px; padding-top: 8px; border-bottom: 1px solid var(--line); }
+.bar { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 6px; height: 100%; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.bar i { display: block; width: 100%; background: var(--accent-soft); border-radius: 6px 6px 0 0; }
+.bar:last-child i { background: var(--accent); }
+.bar:last-child { color: var(--ink); }
+.axis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; padding-top: 8px; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+/* Why */
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); }
+.why > div { border-top: 2px solid var(--ink); padding-top: 20px; }
+.why h3 { font-size: 1.5rem; margin-bottom: 12px; line-height: 1.15; }
+.why p { color: var(--muted); font-size: 16px; }
+.adv { margin-top: clamp(40px, 6vw, 72px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
+.adv div { padding: 22px; font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; letter-spacing: -0.01em; line-height: 1.25; border-right: 1px solid var(--line); }
+.adv div:last-child { border-right: 0; }
+.adv .label { display: block; margin-bottom: 14px; }
+
+/* Impact */
+.impact { background: var(--surface); border: 1px solid var(--line); color: var(--ink); border-radius: 28px; padding: clamp(28px, 6vw, 72px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center; }
+.impact h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); margin: 12px 0 20px; }
+.impact p { opacity: 0.75; max-width: 30em; }
+.impact .label { color: inherit; opacity: 0.6; }
+.stats { display: grid; gap: 0; }
+.stat { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.stat:last-child { border-bottom: 0; }
+.stat b { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 5vw, 4rem); letter-spacing: -0.04em; line-height: 1; min-width: 3.4ch; font-variant-numeric: tabular-nums; }
+.stat span { opacity: 0.75; font-size: 15px; max-width: 14em; }
+
+/* Industries */
+.inds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.ind { padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 170px; display: flex; flex-direction: column; gap: 10px; background: transparent; transition: background 0.2s ease; }
+.ind:hover { background: var(--surface); }
+.ind h3 { font-size: 1.25rem; line-height: 1.15; }
+.ind p { color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+/* Clients */
+.clients-wrap { padding-block: clamp(40px, 6vw, 64px); }
+.clients { display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: baseline; margin-top: 20px; }
+.clients span { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2.1rem); font-weight: 600; letter-spacing: -0.02em; color: var(--muted); }
+
+/* Quote */
+.quote { max-width: 24em; font-family: var(--font-display); font-size: clamp(1.6rem, 3.2vw, 2.5rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.18; text-wrap: balance; }
+.quote-by { margin-top: 20px; display: block; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: end; }
+.contact h2 { font-size: clamp(2.4rem, 6vw, 5rem); letter-spacing: -0.04em; }
+.contact .details { display: grid; gap: 20px; min-width: 0; }
+.mail { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.mail code { font-family: var(--font-mono); font-size: clamp(15px, 2vw, 18px); background: var(--surface); border: 1px solid var(--line); padding: 12px 16px; border-radius: 12px; overflow-wrap: anywhere; user-select: all; }
+.toast { font-family: var(--font-mono); font-size: 12px; color: var(--good); min-height: 1em; }
+
+footer { border-top: 1px solid var(--line); padding-block: 32px max(32px, env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; color: var(--muted); font-size: 14px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--ink); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+
+@media (max-width: 960px) {
+  .sec-head, .svc, .impact, .contact { grid-template-columns: minmax(0, 1fr); }
+  .inds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .adv { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .adv div:nth-child(2) { border-right: 0; }
+  .adv div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .svc.flip .viz { order: 2; }
+}
+@media (max-width: 960px) { .links, .nav-right { gap: 18px; } }
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .nav-right { gap: 10px; }
+  .menu-btn { display: block; }
+  .links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 4px max(16px, env(safe-area-inset-right, 0px)) 12px max(16px, env(safe-area-inset-left, 0px)); box-shadow: 0 24px 32px -24px rgba(14, 27, 25, 0.25); }
+  .links.open { display: flex; }
+  .links a { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 18px; color: var(--ink); }
+  .links a:last-child { border-bottom: 0; }
+  .why { grid-template-columns: minmax(0, 1fr); }
+  .inds { grid-template-columns: minmax(0, 1fr); }
+  .ind { min-height: 0; }
+  .adv { grid-template-columns: minmax(0, 1fr); }
+  .adv div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .adv div:last-child { border-bottom: 0; }
+  .impact { border-radius: 20px; }
+}
+@media (max-width: 720px) {
+  .trio { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+  .word, .desc { grid-column: 1 !important; grid-row: auto !important; }
+  .word { font-size: clamp(2.8rem, 14vw, 4.2rem); margin-top: 28px; }
+  .w1 { order: 1; } .d1 { order: 2; } .w2 { order: 3; } .d2 { order: 4; } .w3 { order: 5; } .d3 { order: 6; }
+  .hero-foot { align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .cta, .mail { width: 100%; }
+  .cta .btn, .mail .btn { flex: 1 1 100%; justify-content: space-between; }
+  .mail code { width: 100%; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.05em; border-radius: 18px; }
+  .hero-panel { padding: 22px; }
+  .viz, .ind { padding: 18px; }
+  .stat b { min-width: 0; }
+  .svc h3 { font-size: 1.7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .menu-btn span { transition: none; }
+  .ind { transition: none; }
+}
+</style>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Trecis Consulting home">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x="2" y="4" width="14" height="5" rx="2.5" fill="var(--ink)"/>
+        <rect x="7" y="11.5" width="14" height="5" rx="2.5" fill="var(--accent)"/>
+        <rect x="12" y="19" width="14" height="5" rx="2.5" fill="var(--ink)"/>
+      </svg>
+      Trecis
+    </a>
+    <div class="nav-right">
+      <nav class="links" id="menu" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why">Why Trecis</a>
+        <a href="#industries">Industries</a>
+        <a href="#clients">Clients</a>
+      </nav>
+      <a class="btn nav-cta" href="#contact">Contact</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div class="hero-panel">
+      <span class="eyebrow"><i></i>HR consulting &middot; Hyderabad, India</span>
+      <div class="trio">
+        <h1>
+          <span class="word w1">Enrich.</span>
+          <span class="word w2">Transform.</span>
+          <span class="word w3">Integrate.</span>
+        </h1>
+        <p class="desc d1">Recruitment that fits the role and the team, not just the CV.</p>
+        <p class="desc d2">Workforce data turned into decisions you can act on.</p>
+        <p class="desc d3">Verified hires, brought into your organization across borders.</p>
+      </div>
+      <div class="hero-foot">
+        <p class="lede">Precision recruitment support and data-driven workforce insights. We close the gap between talent and performance.</p>
+        <div class="cta">
+          <a class="btn" href="#services">Explore services</a>
+          <a class="btn ghost" href="#contact">Talk to us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="sec-head">
+      <h2>Three services, one workforce picture.</h2>
+      <p>Strategic HR for organizations that treat people as their biggest asset. We pair a careful, hands-on approach to hiring with rigorous verification and analytics you can act on.</p>
+    </div>
+
+    <div class="svc">
+      <div>
+        <span class="label">Recruitment Support</span>
+        <h3>Precision recruitment</h3>
+        <p>End-to-end talent acquisition built around what your organization needs. We search carefully for the right fit for every role and bridge the gap between your requirements and seasoned professionals.</p>
+      </div>
+      <div class="viz">
+        <span class="label">Sample hiring pipeline</span>
+        <div class="funnel">
+          <div>Sourced <span>240</span></div>
+          <div>Screened <span>96</span></div>
+          <div>Interviewed <span>38</span></div>
+          <div>Offered <span>12</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc flip">
+      <div>
+        <span class="label">TrecisVerify</span>
+        <h3>Verification you can rely on</h3>
+        <p>Rigorous workforce verification protocols that give you transparency and data integrity, and lower performance and compliance risk when you bring on talent from anywhere in the world.</p>
+      </div>
+      <div class="viz">
+        <span class="label">Typical check set</span>
+        <ul class="checks">
+          <li>Identity <span class="tick">&#10003; Cleared</span></li>
+          <li>Education <span class="tick">&#10003; Cleared</span></li>
+          <li>Employment history <span class="tick">&#10003; Cleared</span></li>
+          <li>Address <span class="tick">&#10003; Cleared</span></li>
+          <li>References <span class="tick wait">&#9679; Awaiting</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div>
+        <span class="label">TrecisInsight</span>
+        <h3>Workforce insights that lead to decisions</h3>
+        <p>Complex people data, turned into clear strategic roadmaps. TrecisInsight shows where your organization is growing, where it is losing people, and what to do about it.</p>
+      </div>
+      <div class="viz">
+        <span class="label">Sample: attrition by quarter, %</span>
+        <div class="bars" role="img" aria-label="Sample bar chart: attrition falls from 18 percent in Q1 to 8 percent in Q4">
+          <div class="bar">18<i style="height: 90%"></i></div>
+          <div class="bar">14<i style="height: 70%"></i></div>
+          <div class="bar">11<i style="height: 55%"></i></div>
+          <div class="bar">8<i style="height: 40%"></i></div>
+        </div>
+        <div class="axis"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="sec-head">
+      <h2>Why teams choose Trecis.</h2>
+      <p>Build smarter teams and make better-informed decisions with a partner that treats recruitment, verification and analytics as one practice.</p>
+    </div>
+    <div class="why">
+      <div>
+        <h3>Proven expertise</h3>
+        <p>Years of global HR consulting give us a deep understanding of complex workforce dynamics, brought to every project.</p>
+      </div>
+      <div>
+        <h3>Data-driven insights</h3>
+        <p>TrecisInsight turns raw people data into strategies that drive measurable growth and efficiency.</p>
+      </div>
+      <div>
+        <h3>Verification precision</h3>
+        <p>Rigorous TrecisVerify processes protect the integrity of every hire and safeguard your organization.</p>
+      </div>
+    </div>
+    <div class="adv">
+      <div><span class="label">Hiring</span>Precision-driven global recruitment</div>
+      <div><span class="label">Data</span>Data-backed workforce intelligence</div>
+      <div><span class="label">Onboarding</span>Seamless cross-border integration</div>
+      <div><span class="label">Speed</span>Agile talent acquisition strategies</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="impact">
+      <div>
+        <span class="label">Measurable impact</span>
+        <h2>Executive ambition, matched with workforce execution.</h2>
+        <p>We deliver HR transformations that redefine organizational potential, so high-stakes placements turn into long-term enterprise value.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>250%</b><span>Efficiency increase following integration</span></div>
+        <div class="stat"><b>98%</b><span>Executive placement retention rate</span></div>
+        <div class="stat"><b>$15M+</b><span>Average annual human capital ROI</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries">
+    <div class="sec-head">
+      <h2>Industries we serve.</h2>
+      <p>From regulated finance to public policy, we adapt our hiring and verification practice to the way each sector works.</p>
+    </div>
+    <div class="inds">
+      <div class="ind"><h3>FinTech &amp; Banking</h3><p>Investment banking, venture capital and digital finance.</p></div>
+      <div class="ind"><h3>Energy &amp; Utilities</h3><p>Renewable power, utilities and green infrastructure.</p></div>
+      <div class="ind"><h3>Healthcare</h3><p>Pharmaceuticals, health systems and biotech research.</p></div>
+      <div class="ind"><h3>Public Sector</h3><p>NGOs, government policy and higher education.</p></div>
+      <div class="ind"><h3>Technology &amp; AI</h3><p>Enterprise SaaS, cloud scaling and AI research labs.</p></div>
+      <div class="ind"><h3>Consumer Goods</h3><p>E-commerce strategy, luxury brands and global retail.</p></div>
+      <div class="ind"><h3>Manufacturing</h3><p>Automotive, industrial tech and supply chain logistics.</p></div>
+      <div class="ind"><h3>Professional Services</h3><p>Legal counsel, management consulting and strategy.</p></div>
+    </div>
+  </section>
+
+  <section id="clients" class="clients-wrap">
+    <span class="label">Our clientele</span>
+    <div class="clients" aria-label="Selected clients">
+      <span>Amazon</span><span>Oracle</span><span>Uber</span><span>Coinbase</span><span>Nium</span><span>MyComplianceOffice</span><span>TASK</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="quote">&ldquo;Trecis Consulting redefined our approach to talent integration. Their insights-first philosophy delivered results beyond our standard benchmarks.&rdquo;</p>
+    <span class="label quote-by">COO, Global Tech Solutions</span>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Build your next team with us.</h2>
+      <div class="details">
+        <p style="color: var(--muted)">Tell us what you are hiring for or what you want to learn about your workforce. We reply with a clear next step.</p>
+        <div class="mail">
+          <code id="addr">ta@trecisconsulting.com</code>
+          <button class="btn" type="button" id="copy">Copy email</button>
+          <a class="btn ghost" href="mailto:ta@trecisconsulting.com">Open mail app</a>
+        </div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <span class="label">Hyderabad, Telangana, India</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>&copy; 2026 Trecis Consulting Pvt Ltd. All rights reserved.</span>
+  <div class="foot-links">
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.linkedin.com/company/trecis-consulting-pvt-ltd/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var mb = document.getElementById('menuBtn');
+  var menu = document.getElementById('menu');
+  function setOpen(o) {
+    menu.classList.toggle('open', o);
+    mb.setAttribute('aria-expanded', o ? 'true' : 'false');
+    mb.setAttribute('aria-label', o ? 'Close menu' : 'Open menu');
+  }
+  mb.addEventListener('click', function () { setOpen(mb.getAttribute('aria-expanded') !== 'true'); });
+  menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 720) setOpen(false); });
+})();
+(function () {
+  var btn = document.getElementById('copy');
+  var toast = document.getElementById('toast');
+  var addr = document.getElementById('addr');
+  function say(msg) {
+    toast.textContent = msg;
+    setTimeout(function () { toast.textContent = ''; }, 2500);
+  }
+  function fallback() {
+    var r = document.createRange();
+    r.selectNodeContents(addr);
+    var s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+    say('Press Ctrl/Cmd+C to copy');
+  }
+  btn.addEventListener('click', function () {
+    try {
+      navigator.clipboard.writeText('ta@trecisconsulting.com').then(function () { say('Email copied'); }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
